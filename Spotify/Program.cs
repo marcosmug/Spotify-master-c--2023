@@ -4,12 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+
         Client client = new Client("admin", "password");
 
-        // try to log in via client class
+        // probeer in te loggen via client class
         bool isLoggedIn = client.Login();
 
-        Console.ReadLine();
 
         // Create a new playlist
         Console.WriteLine("\nWelke playlist wil je?");
@@ -17,8 +17,7 @@ class Program
         Playlist myPlaylist = new Playlist("\nMijn geweldige afspeellijst");
 
         // Add songs to the playlist
-        myPlaylist.AddSong(new Song("playboy carti", "Vamp anthem", "carti", TimeSpan.FromMinutes(3)));
-
+        myPlaylist.AddSong(new Song("X For breakfast", "Ken Carson", "If look could kill", TimeSpan.FromMinutes(3)));
 
         // Show the playlist
         Console.WriteLine("Afspeellijst: " + myPlaylist.Name);
@@ -31,21 +30,29 @@ class Program
 
         Console.ReadKey(true);
 
-
         Console.Write("Do you want to play a song? (Y/N): ");
         string playChoice = Console.ReadLine();
 
+
+
         if (playChoice.ToUpper() == "Y")
         {
-            // test if song can be played with a test song
-            Song song = new Song("Test Song", "Test Artist", "Test Album", TimeSpan.FromMinutes(3));
 
-            // create an instance of the music player
+            // test of nummer agespeeld kan worden met test nummer
+            Song song = new Song(
+                "X For breakfast",
+                "Ken Carson",
+                "If looks could kill",
+                TimeSpan.FromMinutes(3) // Stel de duur van het nummer in op 3 minuten
+            );
+
+            // creer insitantie van de musicplayer
             MusicPlayer musicPlayer = new MusicPlayer();
 
-            // play the song with the music player
+            // speel nummer af met de musicplayer
             musicPlayer.Play(song);
         }
 
+        Console.ReadLine();
     }
 }
