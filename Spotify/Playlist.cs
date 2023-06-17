@@ -8,8 +8,11 @@ namespace Spotify
 {
     internal class Playlist
     {
+       
         public string Name { get; set; }
         public List<Song> Songs { get; set; }
+        public List<User> Authors { get; private set; }
+        
 
         public Playlist(string name)
         {
@@ -19,16 +22,34 @@ namespace Spotify
 
         public void AddSong(Song song)
         {
-            Songs.Add(song);
+            this.Songs.Add(song);
         }
 
-        public void DeletePlaylist()
+        public void RemoveSong(Song song)
         {
-            // Maak de lijst met nummers leeg
-            Songs.Clear();
-
-            // Herstel de naam van de afspeellijst naar een lege string
-            Name = string.Empty;
+                this.Songs.Remove(song);
         }
+
+        public void Addplaylist(Playlist playlist) { 
+            this.Songs.AddRange(playlist.Songs);
+        }
+
+        public void RemovePlaylist(Playlist playlist)
+        {
+            foreach (Song song in playlist.Songs) {
+                this.Songs.Remove(song);
+            }
+        }
+
+        public void AddAuthor(User author) {
+            this.Authors.Add(author);
+        }
+
+        public void RemoveAuthor(User author)
+        {
+            this.Authors.Remove(author);
+        }
+
+        //kaas krokketje <3
     }
 }

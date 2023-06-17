@@ -1,63 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spotify
-{   internal class Client
+{
+    class Client
     {
-        private Musicplayer musicplayer;
-        private User currentUser;
-        private List<Song> allSongs;
+        private string username;
+        private string password;
 
-        public Client()
+        public Client(string username, string password)
         {
-            // Initialize the music player and song collection
-            musicplayer = new Musicplayer();
-            allSongs = new List<Song>();
+            this.username = username;
+            this.password = password;
         }
 
-        public void Login(string username, string password)
+        public bool Login()
         {
-            User authenticatedUser = AuthenticateUser(username, password);
+            // vraag de user om een username
+            Console.Write("Enter your username: ");
+            string enteredUsername = Console.ReadLine();
 
-            if (authenticatedUser != null)
+            // vraag de user om een wachtwoord
+            Console.Write("Enter your password: ");
+            string enteredPassword = Console.ReadLine();
+
+            // vergelijk ingevulde wachtwoord en username met de username and password
+            if (enteredUsername == username && enteredPassword == password)
             {
-                currentUser = authenticatedUser;
-                Console.WriteLine("Login successful. Welcome, " + currentUser.Username + "!");
+                Console.WriteLine("Login successful!");
+                return true;
             }
             else
             {
-                Console.WriteLine("Invalid username or password. Please try again.");
+                Console.WriteLine("Invalid username or password.");
+                return false;
             }
         }
-
-        private User AuthenticateUser(string username, string password)
-        {
-            
-
-            
-            List<User> userList = GetPredefinedUserList();
-
-            User? authenticatedUser = userList.FirstOrDefault(user =>
-                user.Username == username && user.Password == password);
-
-            return authenticatedUser;
-        }
-
-        private List<User> GetPredefinedUserList()
-        {
-            // Create a list of predefined users
-            List<User> userList = new List<User>
-    {
-        new User { Username = "user1", Password = "pass1" },
-        new User { Username = "user2", Password = "pass2" },
-        // Add more users as needed
-    };
-
-            return userList;
-        }
-
     }
 }
