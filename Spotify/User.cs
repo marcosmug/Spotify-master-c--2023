@@ -9,25 +9,26 @@ namespace Spotify
 {
     internal class User
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string Name { get; set; }
+
         public List<Playlist> Playlists { get; set; }
 
         public readonly List<User> Friends;
 
-        public User(string username, string password)
+        public User(string name)
         {
-            Username = username;
-            Password = password;
+            Name = name;
             Playlists = new List<Playlist>();
             Friends = new List<User>();
         }
 
-        public void RemoveFriend(User Friend) { 
+        public void RemoveFriend(User Friend)
+        {
             this.Friends.Remove(Friend);
         }
 
-        public void AddFriend(User Friend) { 
+        public void AddFriend(User Friend)
+        {
             this.Friends.Add(Friend);
         }
     }

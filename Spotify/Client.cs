@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Spotify
 {
     class Client
@@ -9,6 +10,7 @@ namespace Spotify
         private string username;
         private string password;
 
+        public User user = new User("test1");
         public Client(string username, string password)
         {
             this.username = username;
@@ -19,11 +21,11 @@ namespace Spotify
         {
             // vraag de user om een username
             Console.Write("Enter your username: ");
-            string enteredUsername = Console.ReadLine();
+            string? enteredUsername = Console.ReadLine();
 
             // vraag de user om een wachtwoord
             Console.Write("Enter your password: ");
-            string enteredPassword = Console.ReadLine();
+            string? enteredPassword = Console.ReadLine();
 
             // vergelijk ingevulde wachtwoord en username met de username and password
             if (enteredUsername == username && enteredPassword == password)

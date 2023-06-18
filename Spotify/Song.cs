@@ -9,29 +9,37 @@ namespace Spotify
     internal class Song
     {
         public string Title { get; set; }
-        public List<string> Artists { get; private set; } = new List<string>();
-        public string Album { get; set; }
+        public string Artist { get; set; }
+        public Album Album { get; set; }
         public TimeSpan Duration { get; set; }
 
-        public string Genre { get; private set; }
-        
 
-
-        public Song(string title,List<string> artists, string genre, string album, TimeSpan duration)
+        public Song(string title, string artist, Album album, TimeSpan duration)
         {
             Title = title;
-            Artists = artists;
+            Artist = artist;
             Album = album;
             Duration = duration;
-            Genre = genre;
         }
 
-        public void AddArtist(string artist) {
-            this.Artists.Add(artist);       
-        }
 
-        public void RemoveArtist(string artist) {
-            this.Artists.Remove(artist);
+
+
+
+
+        public static void DisplaySongs(List<Song> Songs)
+        {
+            if (Songs.Count > 0)
+            {
+                for (int i = 0; i < Songs.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {Songs[i].Title}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Er zijn geen nummers.");
+            }
         }
     }
 }
