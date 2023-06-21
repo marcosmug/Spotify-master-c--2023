@@ -30,7 +30,7 @@ namespace Spotify
             this.Songs.Remove(song);
         }
 
-        public void Addplaylist(Playlist playlist)
+        public void Addsongtoplaylist(Playlist playlist)
         {
             this.Songs.AddRange(playlist.Songs);
         }
@@ -53,6 +53,18 @@ namespace Spotify
             this.Authors.Remove(author);
         }
 
+        public void AddsongsFromAlbum(Album album)
+        {
+            this.Songs.AddRange(album.Songs);
+        }
+
+        public void RemoveSongsFromAlbum(Album album)
+        {
+            foreach (Song song in album.Songs)
+            {
+                this.Songs.Remove(song);
+            }
+        }
 
         public static void DisplayPlaylists(List<Playlist> playlists)
         {

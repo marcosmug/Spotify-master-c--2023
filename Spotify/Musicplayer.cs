@@ -29,6 +29,14 @@ namespace Spotify
             // Door de duur aftellen
             while (totalSeconds > 0 && isPlaying)
             {
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey(true);
+                    if (key.Key == ConsoleKey.Q)
+                    {
+                        Pause();
+                    }
+                }
                 // Huidige duur weergeven
                 TimeSpan remainingDuration = TimeSpan.FromSeconds(totalSeconds);
                 Console.Clear();
@@ -43,6 +51,9 @@ namespace Spotify
 
                 // 1 seconde van de totale duur aftrekken
                 totalSeconds--;
+
+                // kijk of er een toets beschikbaar is, en zo ja, of dat Q is
+
             }
 
             // Controleren of het nummer is afgelopen of handmatig gepauzeerd

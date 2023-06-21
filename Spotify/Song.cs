@@ -24,9 +24,6 @@ namespace Spotify
 
 
 
-
-
-
         public static void DisplaySongs(List<Song> Songs)
         {
             if (Songs.Count > 0)

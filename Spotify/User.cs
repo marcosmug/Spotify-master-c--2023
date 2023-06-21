@@ -31,5 +31,30 @@ namespace Spotify
         {
             this.Friends.Add(Friend);
         }
+
+        public void AddPlaylistUser(Playlist playlist)
+        {
+            this.Playlists.Add(playlist);
+        }
+
+        public void RemovePlaylistUser(Playlist playlist)
+        {
+            this.Playlists.Remove(playlist);
+        }
+
+        public static void Displayfriends(List<User> Friends)
+        {
+            if (Friends.Count > 0)
+            {
+                for (int i = 0; i < Friends.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {Friends[i].Name}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Er zijn geen afspeellijsten.");
+            }
+        }
     }
 }

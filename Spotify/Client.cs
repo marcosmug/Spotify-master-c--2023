@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Spotify
 {
     class Client
@@ -10,7 +9,8 @@ namespace Spotify
         private string username;
         private string password;
 
-        public User user = new User("test1");
+        public User user = new User("luuksmama");
+        public User userfriend = new User("Friend");
         public Client(string username, string password)
         {
             this.username = username;
