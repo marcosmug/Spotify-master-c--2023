@@ -18,7 +18,7 @@ namespace Spotify
         //album van artiest
         public static Album Howthedogschill = new Album("how the dogs chill", Mall_grab);
 
-
+        //maakt een new list aan met alle artists
         public static List<string> GetAllArtists()
         {
             return new List<string>
@@ -26,7 +26,7 @@ namespace Spotify
                 Mall_grab
             };
         }
-
+        //maakt een new list aan met alle albums
         public static List<Album> GetAllAlbumns()
         {
             return new List<Album>
@@ -36,7 +36,7 @@ namespace Spotify
 
         }
 
-
+         //add liedjes aan de album
         public static void PopulateAlbums()
         {
             Howthedogschill.AddSong(new Song("Liverpool Street in the rain", Mall_grab, Howthedogschill, TimeSpan.FromMinutes(5)));
@@ -46,13 +46,15 @@ namespace Spotify
             Howthedogschill.AddSong(new Song("Get Impetuous", Mall_grab, Howthedogschill, TimeSpan.FromMinutes(5)));
         }
 
+        //maakt users aan
+
         public static User user1 = new User("steve");
         public static User user2 = new User("be");
         public static User user3 = new User("ally");
-        public static User user4 = new User("cum");
-        public static User user5 = new User("bum");
+        public static User user4 = new User("toetje");
+        public static User user5 = new User("poepie");
 
-
+        //geeft all users een album
         public static void UsersInformation()
         {
             user1.AddPlaylistUser(new Playlist("samski"));
@@ -62,7 +64,7 @@ namespace Spotify
             user3.AddPlaylistUser(new Playlist("Kitchenman!!!"));
             user3.Playlists[0].AddsongsFromAlbum(Howthedogschill);
         }
-
+        // pakt alle users
         public static List<User> GetAllUsers()
         {
             return new List<User> {
@@ -73,7 +75,7 @@ namespace Spotify
                 user5
             };
         }
-
+        // zit alle data in een functie data zodat ik het aan kan roepen
         public static void Data()
         {
             PopulateAlbums();

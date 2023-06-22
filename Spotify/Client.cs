@@ -9,7 +9,7 @@ namespace Spotify
         private string username;
         private string password;
 
-        public User user = new User("luuksmama");
+        public User user = new User("ik");
         public User userfriend = new User("Friend");
         public Client(string username, string password)
         {

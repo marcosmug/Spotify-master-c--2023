@@ -23,7 +23,7 @@ namespace Spotify
         }
 
 
-
+        //checkt als de songs hoger zijn dan 0 als het zo is in een for loop gezet 
         public static void DisplaySongs(List<Song> Songs)
         {
             if (Songs.Count > 0)
