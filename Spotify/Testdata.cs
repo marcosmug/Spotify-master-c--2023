@@ -52,7 +52,7 @@ namespace Spotify
         public static User user2 = new User("be");
         public static User user3 = new User("ally");
         public static User user4 = new User("toetje");
-        public static User user5 = new User("poepie");
+        public static User user5 = new User("Cadext oxten");
 
         //geeft all users een album
         public static void UsersInformation()
